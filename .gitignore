@@ -1,0 +1,9 @@
+*.ilk
+*.exp
+*.pdb
+*.iobj
+*.ipdb
+*.sdf
+*.opensdf
+
+/mat
