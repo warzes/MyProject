@@ -7,3 +7,7 @@
 *.opensdf
 
 /mat
+/Game/obj/
+/Game/*/.vs/
+/Game/bin/*/*_Debug.exe
+/Game/bin/*/*_Release.exe
