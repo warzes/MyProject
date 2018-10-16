@@ -6,16 +6,46 @@
     <ClCompile Include="App.cpp">
       <Filter>code</Filter>
     </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>code\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>code\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Music.cpp">
+      <Filter>code\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="App.h">
       <Filter>code</Filter>
     </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>code</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>code\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>code\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>code\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Music.h">
+      <Filter>code\engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="code">
       <UniqueIdentifier>{b8543cc2-ffe5-4486-9293-ff1a91ab7a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="code\engine">
+      <UniqueIdentifier>{baab3279-2f2e-45b0-9913-69b0a726fc73}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

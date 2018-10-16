@@ -76,6 +76,7 @@
 // STANDART C++ HEADER
 //---------------------
 #include <string>
+#include <vector>
 
 //---------------------
 // PLATFORM HEADER
@@ -95,7 +96,6 @@
 // 3RD PARTY HEADER
 //---------------------
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_ttf.h>
 
@@ -108,8 +108,10 @@
 // TODO
 #ifdef _MSC_VER
 #	define TODO( msg ) __pragma(message(__FILE__ "(" B_STRINGIZE_N(__LINE__) ") : TODO: " msg))
+#	define TODO_PRINT( msg ) {printf("TODO: %s\n", msg);}
 #else
 #	define TODO( msg ) 
+#	define TODO_PRINT( msg )
 #endif
 
 template <typename P>
