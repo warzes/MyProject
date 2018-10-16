@@ -72,17 +72,48 @@
 #	pragma warning(push, 3)         // Set warning levels to a quieter level for the STL
 #endif
 
+//---------------------
 // STANDART C++ HEADER
+//---------------------
 #include <string>
 
+//---------------------
 // PLATFORM HEADER
+//---------------------
+// Memory leak checking includes
+#if defined(_MSC_VER) && defined(_DEBUG)
+#	define _CRTDBG_MAP_ALLOC
+#	ifdef _malloca
+#		undef _malloca
+#	endif
+#	include <crtdbg.h>
+#	define _DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#	define new _DEBUG_NEW
+#endif
 
+//---------------------
 // 3RD PARTY HEADER
+//---------------------
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "SDL2/SDL_mixer.h"
+#include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_ttf.h>
 
 #ifdef _MSC_VER
 #	pragma warning(pop)             // Restore warning levels for our code
 #endif
+//-----------------------------------------------------------------------------
+#define B_STRINGIZE(x) #x
+#define B_STRINGIZE_N(number) B_STRINGIZE(number)
+// TODO
+#ifdef _MSC_VER
+#	define TODO( msg ) __pragma(message(__FILE__ "(" B_STRINGIZE_N(__LINE__) ") : TODO: " msg))
+#else
+#	define TODO( msg ) 
+#endif
+
+template <typename P>
+inline void SafeDelete(P ptr) { delete ptr; ptr = nullptr; }
+template <typename P>
+inline void SafeDeleteArray(P ptr) { delete[] ptr; ptr = nullptr; }
 //-----------------------------------------------------------------------------

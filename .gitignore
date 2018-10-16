@@ -5,6 +5,7 @@
 *.ipdb
 *.sdf
 *.opensdf
+Thumbs.db
 
 /mat
 /Game/obj/
