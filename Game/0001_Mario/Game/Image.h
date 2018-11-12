@@ -1,22 +1,17 @@
-#pragma once
+﻿#pragma once
 
 class Image
 {
 public:
-	Image() = default;
-	Image(const std::string &fileName, SDL_Renderer *r);
+	Image(const std::string &fileName, SDL_Renderer *render);
 	~Image();
 
-	void Draw(SDL_Renderer *r, int XOffset, int YOffset);
-	void Draw(SDL_Renderer *r, int XOffset, int YOffset, bool Rotate);
-	void DrawVert(SDL_Renderer *r, int XOffset, int YOffset);
-	void Draw(SDL_Renderer *r, SDL_Rect Crop, SDL_Rect Rect);
+	void Draw(SDL_Renderer *render, int XOffset, int YOffset);
+	void Draw(SDL_Renderer *render, int XOffset, int YOffset, bool rotate);
+	void DrawVert(SDL_Renderer *render, int XOffset, int YOffset);
+	void Draw(SDL_Renderer *render, const SDL_Rect &crop, const SDL_Rect &rect);
 
-	SDL_Texture* GetIMG();	
-	SDL_Rect GetRect();
-	
-	void SetIMG(std::string fileName, SDL_Renderer *r);
-
+	SDL_Texture* GetImage();
 private:
 	SDL_Texture *m_tex = nullptr;
 	SDL_Rect m_rect;

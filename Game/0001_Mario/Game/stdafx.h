@@ -75,8 +75,11 @@
 //---------------------
 // STANDART C++ HEADER
 //---------------------
+#include <cassert>
+#include <ctime>
 #include <string>
 #include <vector>
+#include <iostream>
 
 //---------------------
 // PLATFORM HEADER
@@ -97,7 +100,6 @@
 //---------------------
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_ttf.h>
 
 #ifdef _MSC_VER
 #	pragma warning(pop)             // Restore warning levels for our code
@@ -108,14 +110,16 @@
 // TODO
 #ifdef _MSC_VER
 #	define TODO( msg ) __pragma(message(__FILE__ "(" B_STRINGIZE_N(__LINE__) ") : TODO: " msg))
-#	define TODO_PRINT( msg ) {printf("TODO: %s\n", msg);}
 #else
-#	define TODO( msg ) 
-#	define TODO_PRINT( msg )
+#	define TODO( msg )
 #endif
 
 template <typename P>
-inline void SafeDelete(P ptr) { delete ptr; ptr = nullptr; }
+inline void SafeDelete(P *&ptr) { delete ptr; ptr = nullptr; }
 template <typename P>
-inline void SafeDeleteArray(P ptr) { delete[] ptr; ptr = nullptr; }
+inline void SafeDeleteArray(P *&ptr) { delete[] ptr; ptr = nullptr; }
+//-----------------------------------------------------------------------------
+#ifdef _MSC_VER
+#	pragma warning(disable: 4820)
+#endif
 //-----------------------------------------------------------------------------

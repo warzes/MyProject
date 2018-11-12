@@ -1,22 +1,21 @@
-#pragma once
+﻿#pragma once
 
 class Image;
 
 class Text
 {
 public:
-	Text();
 	~Text();
 
-	void Draw(SDL_Renderer *r, const std::string &Text, int X, int Y, int fontSize = 16);
-	void Draw(SDL_Renderer *r, const std::string &Text, int X, int Y, int fontSize, int R, int G, int B);
-	void DrawCenterX(SDL_Renderer *r, const std::string &Text, int Y, int fontSize = 16, int R = 255, int G = 255, int B = 255);
-	void Draw(SDL_Renderer *r, const std::string &Text, int X, int Y, int Width, int Height);
-	void DrawWS(SDL_Renderer *r, const std::string &Text, int X, int Y, int R, int G, int B, int fontSize = 16);
+	void SetFont(SDL_Renderer *render, const std::string &fileName);
 
-	int GetTextWidth(const std::string &Text, int fontSize = 16);
+	void Draw(SDL_Renderer *render, const std::string &text, int X, int Y, int fontSize = 16);
+	void Draw(SDL_Renderer *render, const std::string &text, int X, int Y, int fontSize, int R, int G, int B);
+	void DrawCenterX(SDL_Renderer *render, const std::string &text, int Y, int fontSize = 16, int R = 255, int G = 255, int B = 255);
+	void Draw(SDL_Renderer *render, const std::string &text, int X, int Y, int width, int height);
+	void DrawWS(SDL_Renderer *render, const std::string &text, int X, int Y, int R, int G, int B, int fontSize = 16);
 
-	void SetFont(SDL_Renderer *r, const std::string &fileName);
+	int GetTextWidth(const std::string &text, int fontSize = 16);
 
 private:
 	int getPos(int Char);
@@ -24,8 +23,8 @@ private:
 
 	Image *m_font = nullptr;
 
-	SDL_Rect m_crop;
-	SDL_Rect m_rect;
+	SDL_Rect m_crop = { 0,0,8,8 };
+	SDL_Rect m_rect = { 0, 0, 16, 16 };
 
 	int m_fontSize = 16;
 	int m_extraLeft = 0;
